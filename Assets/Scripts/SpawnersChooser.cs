@@ -4,12 +4,12 @@ public class SpawnersChooser : MonoBehaviour
 {
     [SerializeField] private float _spawnTime;
 
-    private Spawner[] _generationPoints;
+    private Spawner[] _spawners;
     private float _currentTime;
 
-    private void Start()
+    private void Awake()
     {
-        _generationPoints = GetComponentsInChildren<Spawner>();
+        _spawners = GetComponentsInChildren<Spawner>();
     }
 
     private void Update()
@@ -19,7 +19,7 @@ public class SpawnersChooser : MonoBehaviour
         if (_currentTime >= _spawnTime)
         {
             _currentTime = 0;
-            Spawner current = _generationPoints[Random.Range(0, _generationPoints.Length)];
+            Spawner current = _spawners[Random.Range(0, _spawners.Length)];
             current.Work();
         }
     }

@@ -7,11 +7,7 @@ public class Spawner : MonoBehaviour
 
     public void Work()
     {
-        Instantiate(_template, transform.position, Quaternion.identity);
-    }
-
-    private void Start()
-    {
-        _template.SetTarget(_target);
+        Enemy newEnemy = Instantiate(_template, transform.position, Quaternion.identity);
+        newEnemy.SetTarget(_target);
     }
 }

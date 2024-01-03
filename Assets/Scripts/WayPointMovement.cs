@@ -8,7 +8,7 @@ public class WayPointMovement : MonoBehaviour
     private int _currentPoint;
     private float _speed = 1;
 
-    private void Start()
+    private void Awake()
     {
         _points = new Transform[_path.childCount];
 
